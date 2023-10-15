@@ -4,10 +4,10 @@ function Welcome() {
   return (
     <div className="welcome">
       <Link to="/Login">
-        <button>Login</button>
+        <button className="login-btn">Log In</button>
       </Link>
       <Link to="/Signup">
-        <button>Signup</button>
+        <button className="signup-btn">Sign Up</button>
       </Link>
     </div>
   );
