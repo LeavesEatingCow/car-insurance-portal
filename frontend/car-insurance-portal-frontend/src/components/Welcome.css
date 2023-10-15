@@ -1,0 +1,75 @@
+/* Welcome.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Prevent vertical scrollbar */
+  }
+  
+  .welcome {
+    position: relative;
+    background-color: transparent;
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .car-logo,
+  .logo {
+    width: 300px; /* Adjust the image width as needed */
+    z-index: 1;
+    margin: 10px; /* Add spacing between the images */
+  }
+  
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .signup-btn {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    margin: 10px;
+  }
+  
+  .signup-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .login-link {
+    font-size: 16px;
+    color: #007bff;
+    text-decoration: none;
+    margin: 10px;
+  }
+  
+  .login-link:hover {
+    color: #0056b3;
+  }
+  
