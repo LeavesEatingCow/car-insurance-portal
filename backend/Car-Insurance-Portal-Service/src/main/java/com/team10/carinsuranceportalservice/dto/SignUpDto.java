@@ -1,35 +1,11 @@
-package com.team10.carinsuranceportalservice.entity;
+package com.team10.carinsuranceportalservice.dto;
 
-import jakarta.persistence.*;
-
-import java.util.Collection;
-
-@Entity
-@Table(name = "users")
-public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer userId;
-    @Column(nullable = false)
+public class SignUpDto {
     private String firstName;
-    @Column(nullable = false)
     private String lastName;
-    @Column(unique = true, nullable = false)
     private String email;
-    @Column(nullable = false)
     private String phoneNumber;
-    @Column(nullable = false)
     private String password;
-    @ManyToMany(cascade=CascadeType.ALL)
-    private Collection<Role> roles;
-
-    public Integer getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Integer userId) {
-        this.userId = userId;
-    }
 
     public String getFirstName() {
         return firstName;
@@ -69,13 +45,5 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public Collection<Role> getRoles() {
-        return roles;
-    }
-
-    public void setRoles(Collection<Role> roles) {
-        this.roles = roles;
     }
 }
