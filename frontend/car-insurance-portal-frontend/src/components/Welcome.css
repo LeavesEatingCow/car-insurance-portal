@@ -1,0 +1,108 @@
+/* Welcome.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Prevent vertical scrollbar */
+  }
+  
+  .welcome {
+    position: relative;
+    background-color: transparent;
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: row; /* Change to a horizontal layout */
+    align-items: center;
+    text-align: center;
+    justify-content: space-between; /* Space between images and buttons */
+  }
+  
+  .image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center images vertically in the left portion */
+    margin-left: 20px; /* Add some left margin for spacing */
+  }
+  
+  .car-logo {
+    width: 300px; /* Keep the carLogo width as it is */
+  }
+  
+  .logo,
+  .slogan-logo {
+    width: 400px; /* Increase the width to make the other two images bigger */
+    z-index: 1;
+    margin: 10px; /* Add spacing between the images */
+  }
+  
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Align buttons to the right */
+    margin-right: 20px; /* Add some right margin for spacing */
+  }
+  
+  .button-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+
+
+.signup-btn {
+    padding: 30px 60px; /* Adjust the padding for the desired button size */
+    font-size: 28px; /* Adjust the font size for the text */
+    width: 300px; /* Adjust the width to make the button wider */
+    height: 60px; /* Adjust the height to make the button taller */
+    color: #f0e444; /* Text color for the button */
+    border: 2px solid #f0e444; /* Colored border */
+    background-color: transparent; /* Transparent fill */
+    border-radius: 15px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 10px;
+  
+    display: flex; /* Center text horizontally */
+    justify-content: center; /* Center text horizontally */
+    align-items: center; /* Center text vertically */
+  
+    /* Explicitly target the link within the button and remove the underline */
+    a {
+      text-decoration: none;
+    }
+  
+    /* You can remove this part if you don't want the button to be transparent on hover */
+    &:hover {
+      background-color: transparent; /* Change to transparent on hover */
+    }
+  }
+  
+  
+  
+  
+  .signup-btn:hover {
+    background-color: transparent; /* Change to transparent on hover */
+  }
+  
+  .login-link {
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+    margin: 10px;
+  }
+  
+  .login-link:hover {
+    color: #f0e444;
+  }
+  

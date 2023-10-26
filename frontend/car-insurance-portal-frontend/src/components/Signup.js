@@ -1,15 +1,28 @@
+// Signup.js
+
+import React from "react";
+import "./Signup.css"; // Import the CSS file
+import carLogo from "./images/white_car_image.png";
+import rapidinsureLogo from "./images/rapidinsurelogo1.png";
+
 function Signup() {
   return (
     <div className="main-container">
-      <form>
-        <input type="text" className="first-name" placeholder="First Name"></input>
-        <input type="text" className="last-name" placeholder="Last Name"></input>
-        <input type="email" className="email" placeholder="Email"></input>
-        <input type="tel" className="phone" placeholder="Phone Number"></input>
-        <input type="password" className="password" placeholder="Password"></input>
-        <input type="password" className="confirm-pass" placeholder="Confirm Password"></input>
-        <button>Sign Up</button>
-      </form>
+      <div className="black-bar">
+        <div className="image-container">
+          <img src={carLogo} alt="White Car Logo" className="car-logo" />
+          <img src={rapidinsureLogo} alt="Logo" className="logo" />
+        </div>
+      </div>
+      <div className="off-white-form">
+        <input type="text" className="input-field" placeholder="First Name" />
+        <input type="text" className="input-field" placeholder="Last Name" />
+        <input type="email" className="input-field" placeholder="Email" />
+        <input type="tel" className="input-field" placeholder="Phone Number" />
+        <input type="password" className="input-field" placeholder="Password" />
+        <input type="password" className="input-field" placeholder="Confirm Password" />
+        <button className="signup-btn2">Sign Up</button>
+      </div>
     </div>
   );
 }
