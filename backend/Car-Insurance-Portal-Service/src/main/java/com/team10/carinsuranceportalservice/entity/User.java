@@ -1,8 +1,8 @@
 package com.team10.carinsuranceportalservice.entity;
 
 import jakarta.persistence.*;
-
-import java.util.Collection;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "users")
@@ -10,18 +10,18 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer userId;
-    @Column(nullable = false)
+    @NotBlank
     private String firstName;
-    @Column(nullable = false)
+    @NotBlank
     private String lastName;
-    @Column(unique = true, nullable = false)
+    @NotBlank
+    @Email
+    @Column(unique = true)
     private String email;
-    @Column(nullable = false)
+    @NotBlank
     private String phoneNumber;
-    @Column(nullable = false)
+    @NotBlank
     private String password;
-    @ManyToMany(cascade=CascadeType.ALL)
-    private Collection<Role> roles;
 
     public Integer getUserId() {
         return userId;
@@ -69,13 +69,5 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public Collection<Role> getRoles() {
-        return roles;
-    }
-
-    public void setRoles(Collection<Role> roles) {
-        this.roles = roles;
     }
 }
