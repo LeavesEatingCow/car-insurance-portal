@@ -80,4 +80,8 @@
   .signup-btn2:hover {
     background-color: transparent; /* Change to transparent on hover */
   }
+
+  .error-message {
+    color: red;
+  }
   

@@ -73,4 +73,8 @@
       background-color: #f0e444; /* Change to the background color on hover */
     }
   }
+
+  .error-message {
+    color: red;
+  }
   

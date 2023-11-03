@@ -13,9 +13,26 @@ function Signup() {
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("")
   const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
 
+  const validateEmail = (email) => {
+    return email.match(
+      /^(([^<>()\]\\.,;:\s@"]+(\.[^<>()\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
+  };
+
   const handleSignup = async () => {
+    if (!firstName || !lastName || !email || !phoneNumber || !password) {
+      setErrorMessage("Fields cannot be blank");
+      return;
+    }
+
+    if (!validateEmail(email)) {
+      setErrorMessage("Please enter a valid email address");
+      return;
+    }
+
     try {
       const response = await axios.post("/api/signup", {
         firstName,
@@ -26,10 +43,9 @@ function Signup() {
       });
       localStorage.setItem("token", response.data.token);
       axios.defaults.headers.common["Authorization"] = "Bearer " + localStorage.getItem("token");
-      console.log(response.data);
       navigate("/homepage");
     } catch (error) {
-      console.error("Signup Error", error);
+      setErrorMessage("An error  occurred during signup.")
     }
   }
 
@@ -78,6 +94,7 @@ function Signup() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
+        {errorMessage && <div className="error-message">{errorMessage}</div>}
         <button onClick={handleSignup} className="signup-btn2">Sign Up</button>
       </div>
     </div>

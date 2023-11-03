@@ -8,9 +8,15 @@ import axios from "axios";
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
 
   const handleLogin = async () => {
+    if (!email || !password) {
+      setErrorMessage("Fields cannot be blank");
+      return;
+    }
+
     try {
       const response = await axios.post("/api/login", {
         email,
@@ -21,7 +27,7 @@ function Login() {
       console.log("Login Successful", response.data);
       navigate("/homepage")
     } catch (error) {
-      console.error("Login Error", error);
+      setErrorMessage("Wrong username or password");
     }
   }
 
@@ -43,7 +49,7 @@ function Login() {
       </div>
 
       <div className="off-white-form">
-        <form className="login-form">
+        <form className="login-form" onSubmit={(e) => e.preventDefault()}>
           <input
             type="email"
             className="input-field"
@@ -58,6 +64,7 @@ function Login() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
+          {errorMessage && <div className="error-message">{errorMessage}</div>}
         </form>
         <button onClick={handleLogin} className="login-btn2">Log In</button>
       </div>
