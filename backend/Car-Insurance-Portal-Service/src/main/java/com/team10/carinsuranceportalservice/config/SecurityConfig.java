@@ -14,23 +14,35 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
+
+    private final AuthenticationConfiguration authenticationConfiguration;
+
+    public SecurityConfig(AuthenticationConfiguration authenticationConfiguration) {
+        this.authenticationConfiguration = authenticationConfiguration;
+    }
+
     @Bean
     public static PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
     @Bean
-    public AuthenticationManager authenticationManager(AuthenticationConfiguration configuration) throws Exception {
-        return configuration.getAuthenticationManager();
+    public AuthenticationManager authenticationManager() throws Exception {
+        return authenticationConfiguration.getAuthenticationManager();
     }
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        JwtAuthenticationFilter jwtAuthenticationFilter = new JwtAuthenticationFilter();
+        jwtAuthenticationFilter.setAuthenticationManager(authenticationManager());
+
         http
-                .securityMatcher("/api/**") // Secure api endpoints
+                .securityMatcher("/api/**")
                 .authorizeHttpRequests(authorizeRequests -> authorizeRequests
-                        .requestMatchers("/api/login", "/api/signup").permitAll() // Allow login and signup without authentication
+                        .requestMatchers("/api/login", "/api/signup").permitAll()
                         .anyRequest().authenticated())
+                .addFilter(jwtAuthenticationFilter)
+                .addFilter(new JwtAuthorizationFilter(authenticationManager()))
                 .csrf(AbstractHttpConfigurer::disable);
         return http.build();
     }
