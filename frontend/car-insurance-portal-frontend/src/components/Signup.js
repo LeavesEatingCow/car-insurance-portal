@@ -1,11 +1,38 @@
 // Signup.js
 
-import React from "react";
+import React, {useState} from "react";
 import "./Signup.css"; // Import the CSS file
 import carLogo from "./images/white_car_image.png";
 import rapidinsureLogo from "./images/rapidinsurelogo1.png";
+import {useNavigate} from "react-router-dom";
+import axios from "axios";
 
 function Signup() {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("")
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  const handleSignup = async () => {
+    try {
+      const response = await axios.post("/api/signup", {
+        firstName,
+        lastName,
+        email,
+        phoneNumber,
+        password
+      });
+      localStorage.setItem("token", response.data.token);
+      axios.defaults.headers.common["Authorization"] = "Bearer " + localStorage.getItem("token");
+      console.log(response.data);
+      navigate("/homepage");
+    } catch (error) {
+      console.error("Signup Error", error);
+    }
+  }
+
   return (
     <div className="main-container">
       <div className="black-bar">
@@ -14,14 +41,44 @@ function Signup() {
           <img src={rapidinsureLogo} alt="Logo" className="logo" />
         </div>
       </div>
+
       <div className="off-white-form">
-        <input type="text" className="input-field" placeholder="First Name" />
-        <input type="text" className="input-field" placeholder="Last Name" />
-        <input type="email" className="input-field" placeholder="Email" />
-        <input type="tel" className="input-field" placeholder="Phone Number" />
-        <input type="password" className="input-field" placeholder="Password" />
-        <input type="password" className="input-field" placeholder="Confirm Password" />
-        <button className="signup-btn2">Sign Up</button>
+        <input
+          type="text"
+          className="input-field"
+          placeholder="First Name"
+          value={firstName}
+          onChange={(e) => setFirstName(e.target.value)}
+        />
+        <input
+          type="text"
+          className="input-field"
+          placeholder="Last Name"
+          value={lastName}
+          onChange={(e) => setLastName(e.target.value)}
+        />
+        <input
+          type="email"
+          className="input-field"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <input
+          type="tel"
+          className="input-field"
+          placeholder="Phone Number"
+          value={phoneNumber}
+          onChange={(e) => setPhoneNumber(e.target.value)}
+        />
+        <input
+          type="password"
+          className="input-field"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <button onClick={handleSignup} className="signup-btn2">Sign Up</button>
       </div>
     </div>
   );
