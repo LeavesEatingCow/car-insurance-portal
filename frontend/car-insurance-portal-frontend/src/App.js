@@ -1,23 +1,36 @@
-import logo from './logo.svg';
 import './App.css';
+import Welcome from "./components/Welcome";
+import Login from "./components/Login";
+import Signup from "./components/Signup";
+import {Navigate, Route, Routes, useLocation} from "react-router-dom";
+import Homepage from "./components/Homepage";
+
+function PrivateRoute({ children, ...rest }) {
+  const location = useLocation();
+  const token = localStorage.getItem("token");
+
+  if (!token) {
+    return <Navigate to="/" state={{ from: location }} />;
+  }
+  return children;
+}
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  return(
+    <div>
+      <Routes>
+        <Route path="/" element={ <Welcome/> } />
+        <Route path="/Login" element={ <Login/>} />
+        <Route path="/Signup" element={ <Signup/>} />
+        <Route
+          path="/homepage"
+          element={
+            <PrivateRoute>
+              <Homepage />
+            </PrivateRoute>
+          }
+        />
+      </Routes>
     </div>
   );
 }
