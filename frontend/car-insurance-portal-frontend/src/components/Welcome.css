@@ -6,6 +6,19 @@
   padding: 20px;
 }
 
+header{
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 header img {
   width: 100%;
   height: auto;
@@ -32,6 +45,21 @@ header h1 {
   margin-bottom: 10px;
 }
 
+.wrapper {
+  width: 145px;
+  min-height: 175px;
+  background-color: lightgrey;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 1rem;
+  color: #505050;
+  margin: 1rem 2rem;
+}
+
 .how-it-works,
 .why-choose {
   margin: 20px 0;
@@ -54,7 +82,13 @@ header h1 {
 .cta {
   text-align: center;
 }
-
+.cta img{
+  width: 50%;
+  float: right;
+}
+.bottom{
+  margin-top: auto;
+}
 .cta button {
   padding: 10px 20px;
   font-size: 1.2em;
