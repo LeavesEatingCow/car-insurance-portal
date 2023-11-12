@@ -30,6 +30,7 @@ const WelcomePage = () => {
           <img src={ConnectionImg} alt="Connect" />
           <p>Effortlessly Connect with Leading Car Insurance Agencies</p>
         </div>
+        <div>At RapidInsure, we streamline the process of finding the best car insurance for your needs. Our platform is designed to make insurance inquiries as straightforward and efficient as possible. Say goodbye to the hassle of reaching out to multiple insurers one by one!</div>
       </section>
 
       <section className="how-it-works">
