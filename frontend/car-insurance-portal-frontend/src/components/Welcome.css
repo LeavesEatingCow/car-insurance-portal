@@ -4,6 +4,8 @@
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
+
+  font-family: 'Roboto', sans-serif;
 }
 
 header{
@@ -83,11 +85,14 @@ header h1 {
   text-align: center;
 }
 .cta img{
-  width: 50%;
-  float: right;
+  width: 45%;
 }
-.bottom{
-  margin-top: auto;
+.cta-container{
+  display: flex
+}
+.cta .cta-text{
+  width: 100%;
+  
 }
 .cta button {
   padding: 10px 20px;
