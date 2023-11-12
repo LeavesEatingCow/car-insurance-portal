@@ -6,6 +6,9 @@ import './Welcome.css'; // Import the CSS file
 import HeaderImg from "./images/header.jpg";
 import ConnectionImg from "./images/connection.jpg";
 import SignUpImg from "./images/sign_up.jpg";
+import AccessTimeFilled from '@mui/icons-material/AccessTimeFilled';
+import EmojiPeopleIcon from '@mui/icons-material/EmojiPeople';
+import SecurityIcon from '@mui/icons-material/Security';
 
 const WelcomePage = () => {
   return (
@@ -56,16 +59,16 @@ const WelcomePage = () => {
         {/* Why Choose RapidInsure Section */}
         {/* Use icons or images next to each point */}
         <h2>Why Choose RapidInsure?</h2>
-        <div class="wrapper">
-          <img src="time-icon.png" alt="Time-Efficient" />
+        <div class="choose-wrapper">
+          <AccessTimeFilled></AccessTimeFilled>
           <p>Time-Efficient: Save hours by reaching out to multiple agencies in one go.</p>
         </div>
-        <div class="wrapper">
-          <img src="" alt="User-Friendly" />
+        <div class="choose-wrapper">
+          <EmojiPeopleIcon></EmojiPeopleIcon>
           <p>User-Friendly Interface: Navigate through our platform with ease.</p>
         </div>
-        <div class="wrapper">
-          <img src="" alt="Secure and Reliable" />
+        <div class="choose-wrapper">
+          <SecurityIcon></SecurityIcon>
           <p>Secure and Reliable: Your data's security is our top priority.</p>
         </div>
         {/* Repeat similar structure for other benefits */}
