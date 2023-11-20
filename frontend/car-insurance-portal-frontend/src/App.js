@@ -18,7 +18,7 @@ function PrivateRoute({ children, ...rest }) {
 function App() {
   return(
     <div className="App">
-      Hello
+      <Welcome />
     </div>
     // <div>
     //   <Routes>
