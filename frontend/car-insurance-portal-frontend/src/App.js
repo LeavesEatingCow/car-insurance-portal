@@ -17,21 +17,24 @@ function PrivateRoute({ children, ...rest }) {
 
 function App() {
   return(
-    <div>
-      <Routes>
-        <Route path="/" element={ <Welcome/> } />
-        <Route path="/Login" element={ <Login/>} />
-        <Route path="/Signup" element={ <Signup/>} />
-        <Route
-          path="/homepage"
-          element={
-            <PrivateRoute>
-              <Homepage />
-            </PrivateRoute>
-          }
-        />
-      </Routes>
+    <div className="App">
+      Hello
     </div>
+    // <div>
+    //   <Routes>
+    //     <Route path="/" element={ <Welcome/> } />
+    //     <Route path="/Login" element={ <Login/>} />
+    //     <Route path="/Signup" element={ <Signup/>} />
+    //     <Route
+    //       path="/homepage"
+    //       element={
+    //         <PrivateRoute>
+    //           <Homepage />
+    //         </PrivateRoute>
+    //       }
+    //     />
+    //   </Routes>
+    // </div>
   );
 }
 
