@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from './Navbar'
 import BannerBackground from "../Assets/home-banner-background.png"
-import BannerImage from "../Assets/home-banner-image.png"
+import BannerImage from "../Assets/car-logo.png"
 import { FiArrowRight } from "react-icons/fi"
 
 const Welcome = () => {
