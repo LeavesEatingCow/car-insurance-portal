@@ -17,6 +17,7 @@ public class EmailSenderServiceImpl implements EmailSenderService {
         MimeMessage mimeMessage = mailSender.createMimeMessage();
         MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage, true);
 
+        mimeMessageHelper.setFrom("rapidinsureco@gmail.com");
         mimeMessageHelper.setReplyTo(replyTo);
         mimeMessageHelper.setTo(sendTo);
         mimeMessageHelper.setText(body);
