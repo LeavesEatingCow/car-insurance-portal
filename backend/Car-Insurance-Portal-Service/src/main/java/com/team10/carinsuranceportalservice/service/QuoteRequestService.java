@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.UUID;
 
 @Service
 public class QuoteRequestService {
@@ -23,7 +22,7 @@ public class QuoteRequestService {
     @Autowired
     private EmailSenderService emailSenderService;
 
-    public QuoteRequest createQuoteRequest(QuoteRequest quoteRequest, UUID userId) {
+    public QuoteRequest createQuoteRequest(QuoteRequest quoteRequest, Integer userId) {
         return quoteRequest;
     }
 
