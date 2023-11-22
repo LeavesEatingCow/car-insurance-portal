@@ -7,7 +7,7 @@ import rapidinsureLogo from "./images/rapidinsurelogo1.png";
 import {useNavigate} from "react-router-dom";
 import axios from "axios";
 
-function Signup() {
+const Signup = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -43,7 +43,7 @@ function Signup() {
       });
       localStorage.setItem("token", response.data.token);
       axios.defaults.headers.common["Authorization"] = "Bearer " + localStorage.getItem("token");
-      navigate("/homepage");
+      navigate("/quote-request");
     } catch (error) {
       setErrorMessage("An error  occurred during signup.")
     }
