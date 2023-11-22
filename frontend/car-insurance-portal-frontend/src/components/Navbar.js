@@ -15,9 +15,11 @@ import InfoIcon from "@mui/icons-material/Info";
 import CommentRoundedIcon from "@mui/icons-material/CommentRounded";
 import PhoneRoundedIcon from "@mui/icons-material/PhoneRounded";
 import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
+import {Link, useNavigate} from "react-router-dom";
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
+  const navigate = useNavigate();
   const menuOptions = [
     {
       text: "Home",
@@ -40,6 +42,11 @@ const Navbar = () => {
       icon: <ShoppingCartRoundedIcon />,
     },
   ];
+
+  const navigateToQuoteRequest = () => {
+      navigate("/quote-request");
+  }
+
   return (
     <nav>
       <div className="nav-logo-container">
@@ -52,10 +59,10 @@ const Navbar = () => {
       <div className="navbar-links-container">
         
         <a href="">About</a>
-        <a href="">Sign Up</a>
-        <a href="">Login</a>
+        <Link to="/signup">Sign Up</Link>
+        <Link to="/login">Login</Link>
 
-        <button className="primary-button">Generate a Quote Now</button>
+        <button className="primary-button" onClick={navigateToQuoteRequest}>Generate a Quote Now</button>
       </div>
       <div className="navbar-menu-container">
         <HiOutlineBars3 onClick={() => setOpenMenu(true)} />
