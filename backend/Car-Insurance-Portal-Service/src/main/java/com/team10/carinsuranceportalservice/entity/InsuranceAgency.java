@@ -8,7 +8,6 @@ public class InsuranceAgency {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String logo;
     private String name;
     private String email;
     private String phoneNumber;
@@ -35,5 +34,13 @@ public class InsuranceAgency {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 }
