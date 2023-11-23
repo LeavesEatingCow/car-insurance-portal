@@ -31,4 +31,14 @@ public class QuoteRequestController {
         quoteRequestService.sendQuoteRequest(quoteRequestId, agencyIds);
         return ResponseEntity.ok("Quote requests sent successfully");
     }
+
+    @GetMapping("/{quoteRequestId}/preview")
+    public ResponseEntity<String> previewQuoteRequest(@PathVariable Integer quoteRequestId) {
+        QuoteRequest quoteRequest = quoteRequestService.getQuoteRequestById(quoteRequestId);
+        if (quoteRequest == null) {
+            return ResponseEntity.notFound().build();
+        }
+        String emailContent = quoteRequestService.buildEmailContent(quoteRequest);
+        return ResponseEntity.ok(emailContent);
+    }
 }

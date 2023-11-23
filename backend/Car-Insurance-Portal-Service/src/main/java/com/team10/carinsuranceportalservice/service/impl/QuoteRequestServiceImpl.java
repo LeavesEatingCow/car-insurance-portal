@@ -3,6 +3,7 @@ package com.team10.carinsuranceportalservice.service.impl;
 import com.team10.carinsuranceportalservice.entity.InsuranceAgency;
 import com.team10.carinsuranceportalservice.entity.QuoteRequest;
 import com.team10.carinsuranceportalservice.entity.User;
+import com.team10.carinsuranceportalservice.entity.enums.CoverageType;
 import com.team10.carinsuranceportalservice.entity.enums.PrimaryUse;
 import com.team10.carinsuranceportalservice.repository.InsuranceAgencyRepository;
 import com.team10.carinsuranceportalservice.repository.QuoteRequestRepository;
@@ -29,6 +30,11 @@ public class QuoteRequestServiceImpl implements QuoteRequestService {
     }
 
     @Override
+    public QuoteRequest getQuoteRequestById(Integer quoteRequestId) {
+        return quoteRequestRepository.findById(quoteRequestId).orElse(null);
+    }
+
+    @Override
     public QuoteRequest createQuoteRequest(QuoteRequest quoteRequest, String userEmail) {
         User user = userRepository.findByEmail(userEmail);
         if (user == null) {
@@ -49,7 +55,7 @@ public class QuoteRequestServiceImpl implements QuoteRequestService {
         }
     }
 
-    private String buildEmailContent(QuoteRequest quoteRequest) {
+    public String buildEmailContent(QuoteRequest quoteRequest) {
         User user = quoteRequest.getUser();
 
         StringBuilder emailContent = new StringBuilder();
@@ -72,7 +78,14 @@ public class QuoteRequestServiceImpl implements QuoteRequestService {
                 .append("Vehicle Year: ").append(quoteRequest.getCarYear()).append("\n")
                 .append("Vehicle Mileage: ").append(quoteRequest.getMileage()).append("\n")
                 .append("VIN Number: ").append(quoteRequest.getVin()).append("\n")
-                .append("Primary Use of Vehicle: ").append(getPrimaryUse(quoteRequest));
+                .append("Primary Use of Vehicle: ").append(getPrimaryUse(quoteRequest)).append("\n\n");
+
+        if (quoteRequest.getCoverageTypes() != null && !quoteRequest.getCoverageTypes().isEmpty()) {
+            emailContent.append("\nRequested Coverage Types:\n");
+            for (CoverageType coverageType : quoteRequest.getCoverageTypes()) {
+                emailContent.append("- ").append(coverageType.name()).append("\n");
+            }
+        }
 
         String additionalInfo = additionalInfo(quoteRequest);
         if (additionalInfo != null && !additionalInfo.isEmpty()) {
