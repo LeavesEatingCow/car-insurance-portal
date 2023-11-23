@@ -3,32 +3,32 @@ import Welcome from "./components/Welcome";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import {Navigate, Route, Routes, useLocation} from "react-router-dom";
-import Homepage from "./components/Homepage";
+import QuoteRequest from "./components/QuoteRequest";
 
 function PrivateRoute({ children, ...rest }) {
   const location = useLocation();
   const token = localStorage.getItem("token");
 
   if (!token) {
-    return <Navigate to="/" state={{ from: location }} />;
+    return <Navigate to="/login" state={{ from: location }} />;
   }
   return children;
 }
 
 function App() {
   return(
-    <div>
+    <div className="App">
       <Routes>
         <Route path="/" element={ <Welcome/> } />
-        <Route path="/Login" element={ <Login/>} />
-        <Route path="/Signup" element={ <Signup/>} />
+        <Route path="/login" element={ <Login/>} />
+        <Route path="/signup" element={ <Signup/>} />
         <Route
-          path="/homepage"
-          element={
-            <PrivateRoute>
-              <Homepage />
-            </PrivateRoute>
-          }
+            path="/quote-request"
+            element={
+              <PrivateRoute>
+                <QuoteRequest />
+              </PrivateRoute>
+            }
         />
       </Routes>
     </div>
