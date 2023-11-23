@@ -2,8 +2,8 @@
 
 import React, {useState} from "react";
 import "./Signup.css"; // Import the CSS file
-import carLogo from "./images/white_car_image.png";
-import rapidinsureLogo from "./images/rapidinsurelogo1.png";
+import carLogo from "../images/white_car_image.png";
+import rapidinsureLogo from "../images/rapidinsurelogo1.png";
 import {useNavigate} from "react-router-dom";
 import axios from "axios";
 
