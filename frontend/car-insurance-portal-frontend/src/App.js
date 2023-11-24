@@ -1,9 +1,9 @@
 import './App.css';
 import Welcome from "./components/Welcome";
-import Login from "./components/Login";
-import Signup from "./components/Signup";
+import Login from "./components/registration/Login";
+import Signup from "./components/registration/Signup";
 import {Navigate, Route, Routes, useLocation} from "react-router-dom";
-import QuoteRequest from "./components/QuoteRequest";
+import QuoteRequest from "./components/quote_request/QuoteRequest";
 
 function PrivateRoute({ children, ...rest }) {
   const location = useLocation();
