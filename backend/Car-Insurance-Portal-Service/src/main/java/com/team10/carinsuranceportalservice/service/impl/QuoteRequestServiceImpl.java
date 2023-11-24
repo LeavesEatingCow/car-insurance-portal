@@ -68,8 +68,8 @@ public class QuoteRequestServiceImpl implements QuoteRequestService {
                 .append("Location: ").append(quoteRequest.getAddress()).append("\n")
                 .append("Date of Birth: ").append(quoteRequest.getDateOfBirth()).append("\n")
                 .append("Gender: ").append(quoteRequest.getGender()).append("\n")
-                .append("Marital Status: ").append(getMaritalStatus(quoteRequest)).append("\n")
-                .append("Homeowner? ").append(quoteRequest.isHomeowner()).append("\n")
+                .append("Marital Status: ").append(quoteRequest.getMartialStatus()).append("\n")
+                .append("Homeowner? ").append(quoteRequest.getHomeownerStatus()).append("\n")
                 .append("Number of Accidents in Past 3 Years: ").append(quoteRequest.getNumberOfAccidents()).append("\n")
                 .append("Add driver to policy? ").append(quoteRequest.getAddDriverToPolicy()).append("\n\n");
 
@@ -106,13 +106,6 @@ public class QuoteRequestServiceImpl implements QuoteRequestService {
             return "personal use";
         }
         return "commercial use";
-    }
-
-    private String getMaritalStatus(QuoteRequest quoteRequest) {
-        if (quoteRequest.isMarried()) {
-            return "Married";
-        }
-        return "Single";
     }
 
     private String additionalInfo(QuoteRequest quoteRequest) {

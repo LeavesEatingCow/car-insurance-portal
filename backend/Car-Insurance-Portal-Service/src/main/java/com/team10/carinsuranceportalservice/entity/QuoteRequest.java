@@ -20,12 +20,12 @@ public class QuoteRequest {
     private String address;
     @NotBlank
     private String gender;
-    @NotNull
-    private boolean isMarried;
-    @NotNull
-    private boolean isHomeowner;
-    @NotNull
-    private int vin;
+    @NotBlank
+    private String martialStatus;
+    @NotBlank
+    private String homeownerStatus;
+    @NotBlank
+    private String vin;
     @NotBlank
     private String carMake;
     @NotBlank
@@ -83,27 +83,27 @@ public class QuoteRequest {
         this.gender = gender;
     }
 
-    public boolean isMarried() {
-        return isMarried;
+    public String getMartialStatus() {
+        return martialStatus;
     }
 
-    public void setMarried(boolean married) {
-        isMarried = married;
+    public void setMartialStatus(String martialStatus) {
+        this.martialStatus = martialStatus;
     }
 
-    public boolean isHomeowner() {
-        return isHomeowner;
+    public String getHomeownerStatus() {
+        return homeownerStatus;
     }
 
-    public void setHomeowner(boolean homeowner) {
-        isHomeowner = homeowner;
+    public void setHomeownerStatus(String homeownerStatus) {
+        this.homeownerStatus = homeownerStatus;
     }
 
-    public int getVin() {
+    public String getVin() {
         return vin;
     }
 
-    public void setVin(int vin) {
+    public void setVin(String vin) {
         this.vin = vin;
     }
 
