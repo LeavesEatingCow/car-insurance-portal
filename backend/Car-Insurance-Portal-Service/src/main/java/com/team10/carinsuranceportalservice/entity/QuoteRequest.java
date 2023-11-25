@@ -21,7 +21,7 @@ public class QuoteRequest {
     @NotBlank
     private String gender;
     @NotBlank
-    private String martialStatus;
+    private String maritalStatus;
     @NotBlank
     private String homeownerStatus;
     @NotBlank
@@ -83,12 +83,12 @@ public class QuoteRequest {
         this.gender = gender;
     }
 
-    public String getMartialStatus() {
-        return martialStatus;
+    public String getMaritalStatus() {
+        return maritalStatus;
     }
 
-    public void setMartialStatus(String martialStatus) {
-        this.martialStatus = martialStatus;
+    public void setMaritalStatus(String maritalStatus) {
+        this.maritalStatus = maritalStatus;
     }
 
     public String getHomeownerStatus() {
