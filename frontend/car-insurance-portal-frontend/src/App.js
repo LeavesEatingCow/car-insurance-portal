@@ -3,13 +3,30 @@ import Welcome from "./components/Welcome";
 import Login from "./components/registration/Login";
 import Signup from "./components/registration/Signup";
 import {Navigate, Route, Routes, useLocation} from "react-router-dom";
-import QuoteRequest from "./components/quote_request/QuoteRequest";
+import QuoteRequestForm from "./components/quote_request/QuoteRequestForm";
+import {jwtDecode} from 'jwt-decode';
 
 function PrivateRoute({ children, ...rest }) {
   const location = useLocation();
   const token = localStorage.getItem("token");
 
-  if (!token) {
+  const isTokenValid = () => {
+    if (!token) {
+      return false;
+    }
+
+    try {
+      const decodedToken = jwtDecode(token);
+      const currentTime = Date.now() / 1000;
+      return decodedToken.exp > currentTime;
+    } catch (error) {
+      console.error("Error decoding token: ", error);
+      return false;
+    }
+  }
+
+  // if token is not present or expired navigate to /login
+  if (!isTokenValid()) {
     return <Navigate to="/login" state={{ from: location }} />;
   }
   return children;
@@ -26,7 +43,7 @@ function App() {
             path="/quote-request"
             element={
               <PrivateRoute>
-                <QuoteRequest />
+                <QuoteRequestForm />
               </PrivateRoute>
             }
         />
