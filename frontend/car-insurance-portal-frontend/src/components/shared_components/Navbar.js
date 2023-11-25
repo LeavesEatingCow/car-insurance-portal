@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import Logo from "../../Assets/Logo.svg";
 import { BsCart2 } from "react-icons/bs";
 import { HiOutlineBars3 } from "react-icons/hi2";
@@ -16,10 +16,30 @@ import CommentRoundedIcon from "@mui/icons-material/CommentRounded";
 import PhoneRoundedIcon from "@mui/icons-material/PhoneRounded";
 import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
 import {Link, useNavigate} from "react-router-dom";
+import {jwtDecode} from "jwt-decode";
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const navigate = useNavigate();
+
+  const isTokenValid = () => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      return false;
+    }
+
+    try {
+      const decodedToken = jwtDecode(token);
+      const currentTime = Date.now() / 1000;
+      return decodedToken.exp > currentTime;
+    } catch (error) {
+      console.error("Error decoding token: ", error);
+      return false;
+    }
+  };
+
+  const isLoggedIn = isTokenValid();
+
   const menuOptions = [
     {
       text: "Home",
@@ -51,18 +71,20 @@ const Navbar = () => {
     <nav>
       <div className="nav-logo-container">
         <img src={Logo} alt="" />
-        
       </div>
-      <div className="navbar-links-container">
-            <a href="">Insurance Companies</a>
-        </div>
-      <div className="navbar-links-container">
-        
-        <a href="">About</a>
-        <Link to="/signup">Sign Up</Link>
-        <Link to="/login">Login</Link>
 
-        <button className="primary-button" onClick={navigateToQuoteRequest}>Generate a Quote Now</button>
+      <div className="navbar-links-container">
+        <a href="">Insurance Companies</a>
+        <a href="">About</a>
+        {!isLoggedIn && (
+          <>
+            <Link to="/signup">Sign Up</Link>
+            <Link to="/login">Login</Link>
+          </>
+        )}
+        <button className="primary-button" onClick={navigateToQuoteRequest}>
+          Generate a Quote Now
+        </button>
       </div>
       <div className="navbar-menu-container">
         <HiOutlineBars3 onClick={() => setOpenMenu(true)} />
