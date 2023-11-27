@@ -90,8 +90,8 @@ const WelcomePage = () => {
         {/* Call to Action Section */}
         <div class="cta-container">
           <div class="cta-text">
-          <h3>Ready to Dive In?</h3>
-          <p>Join RapidInsure today and transform the way you find car insurance. Sign up now and step into the world of simplified insurance browsing!</p>
+            <h3>Ready to Dive In?</h3>
+            <p>Join RapidInsure today and transform the way you find car insurance. Sign up now and step into the world of simplified insurance browsing!</p>
           <Link to ="/Signup"><button>Sign Up</button></Link>
           </div>
           <div><img src={SignUpImg} alt="Signing Up"/></div>

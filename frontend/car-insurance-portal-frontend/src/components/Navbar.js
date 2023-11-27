@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Logo from "../Assets/Logo.svg";
+import './Navbar.css';
+
 import { BsCart2 } from "react-icons/bs";
 import { HiOutlineBars3 } from "react-icons/hi2";
 import Box from "@mui/material/Box";
@@ -30,16 +32,8 @@ const Navbar = () => {
       icon: <InfoIcon />,
     },
     {
-      text: "Testimonials",
-      icon: <CommentRoundedIcon />,
-    },
-    {
       text: "Contact",
       icon: <PhoneRoundedIcon />,
-    },
-    {
-      text: "Cart",
-      icon: <ShoppingCartRoundedIcon />,
     },
   ];
 
@@ -50,20 +44,13 @@ const Navbar = () => {
   return (
     <nav>
       <div className="nav-logo-container">
-        <img src={Logo} alt="" />
-        
+        <Link to="/"><img src={Logo} alt="" /></Link>
       </div>
       <div className="navbar-links-container">
             <a href="">Insurance Companies</a>
-        </div>
-      
-      <div className="welc-debug">
-        <Link to="/1">w1</Link>
-        <Link to="/2">w2</Link>
-        <Link to="/3">w3</Link>
       </div>
+      
       <div className="navbar-links-container">
-        
         <a href="">About</a>
         <Link to="/signup">Sign Up</Link>
         <Link to="/login">Login</Link>
