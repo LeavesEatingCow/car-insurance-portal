@@ -16,6 +16,10 @@
     border-radius: 4px;
 }
 
+.error-message {
+    color: red;
+}
+
 .label {
     margin: 5px 0;
 }

@@ -5,6 +5,7 @@ import Signup from "./components/registration/Signup";
 import {Navigate, Route, Routes, useLocation} from "react-router-dom";
 import QuoteRequestForm from "./components/quote_request/QuoteRequestForm";
 import {jwtDecode} from 'jwt-decode';
+import ConfirmationPage from "./components/quote_request/ConfirmationPage";
 
 function PrivateRoute({ children, ...rest }) {
   const location = useLocation();
@@ -40,12 +41,20 @@ function App() {
         <Route path="/login" element={ <Login/>} />
         <Route path="/signup" element={ <Signup/>} />
         <Route
-            path="/quote-request"
-            element={
-              <PrivateRoute>
-                <QuoteRequestForm />
-              </PrivateRoute>
-            }
+          path="/quote-request"
+          element={
+            <PrivateRoute>
+              <QuoteRequestForm />
+            </PrivateRoute>
+          }
+        />
+        <Route 
+          path="/confirmation/:quoteRequestId" 
+          element={
+            <PrivateRoute>
+              <ConfirmationPage />
+            </PrivateRoute>
+          }
         />
       </Routes>
     </div>
