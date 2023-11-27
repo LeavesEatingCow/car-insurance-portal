@@ -1,0 +1,199 @@
+.thumbnail1 {
+    width: 1150px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+
+}
+
+.introToTips {
+    color: grey;
+    font-family: Arial, serif;
+    text-align: left;
+    padding-left: 150px;
+    padding-right: 150px;
+    margin-top: 20px;
+  
+}
+
+
+.rapidInsure-title {
+    font-family: Arial, serif;
+    color: #ffd814;
+    background-color: white;
+    height: 20px;
+    width:120px;
+    font-size: 17px;
+    padding-left: 25px;
+    font-weight: bold;
+}
+  
+.rapidInsure-title_2 {
+    font-family: Arial, serif;
+    color: black;
+    height: 20px;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+}
+  
+.title-section {
+    padding-left: 75px;
+    padding-right: 75px;
+}
+  
+.requirements-title {
+    font-family: Arial,serif;
+    color: black;
+    font-weight: bold;
+    font-size: 25px;
+}
+  
+.insurance-tip1 {
+    padding-left: 150px;
+    padding-right: 150px;
+    margin-bottom: 50px;
+}
+  
+.tip1-title{
+    font-family: Arial,serif;
+    color: black;
+    font-weight: bold;
+    font-size: 25px;
+}
+  
+.insurance-tip2 {
+    padding-left: 150px;
+    padding-right: 150px;
+    margin-bottom: 50px;
+}
+  
+.tip2-title {
+    font-family: Arial,serif;
+    color: black;
+    font-weight: bold;
+    font-size: 25px;
+}
+  
+.insurance-tip3 {
+    padding-left: 150px;
+    padding-right: 150px;
+    margin-bottom: 50px;
+}
+  
+.tip3-title {
+    font-family: Arial,serif;
+    color: black;
+    font-weight: bold;
+    font-size: 25px;
+}
+  
+.insurance-tip4 {
+    padding-left: 150px;
+    padding-right: 150px;
+    margin-bottom: 100px;
+}
+  
+.tip4-title {
+    font-family: Arial,serif;
+    color: black;
+    font-weight: bold;
+    font-size: 25px;
+}
+  
+.faq {
+    padding-left: 150px;
+    padding-right: 150px;
+    margin-bottom: 100px;
+}
+  
+.faq-title {
+    font-family: Arial,serif;
+    color: black;
+    font-weight: bold;
+    font-size: 25px;
+}
+  
+.faq-q1 {
+    font-family: Arial,serif;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+}
+  
+.faq-q2 {
+    font-family: Arial,serif;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+}
+  
+.faq-q3 {
+    font-family: Arial,serif;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+.insurance-body {
+    margin-top: 75px;
+    padding-left: 150px;
+    padding-right: 150px;
+    margin-bottom: 50px;
+}
+  
+.requirements-body {
+    color: grey;
+    font-family: Arial,serif;
+}
+  
+.bullet-requirements {
+    color: grey;
+    font-family: Arial,serif;
+}
+  
+.tip1-body {
+    color: grey;
+    font-family: Arial,serif;
+}
+  
+.tip2-body {
+    color: grey;
+    font-family: Arial,serif;
+}
+  
+.tip3-body {
+    color: grey;
+    font-family: Arial,serif;
+}
+  
+.tip4-body {
+    color: grey;
+    font-family: Arial,serif;
+}
+  
+.q1-bullet {
+    font-family: Arial,serif;
+    color: grey;
+    margin-bottom: 35px;
+}
+  
+.q2-bullet {
+    font-family: Arial,serif;
+    color: grey;
+    margin-bottom: 35px;
+}
+  
+.q3-bullet {
+    font-family: Arial,serif;
+    color: grey;
+}
+  
+ul {
+    list-style-type: disc;
+}

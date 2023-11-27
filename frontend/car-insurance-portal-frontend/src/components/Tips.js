@@ -1,44 +1,16 @@
 import React, {useState} from "react";
 import {useNavigate} from "react-router-dom";
-import "./body_text.css";
-import "./IntroToTips.css";
-import "./thumbnails.css";
-import "./title.css";
+// import "./body_text.css";
+// import "./IntroToTips.css";
+// import "./thumbnails.css";
+// import "./title.css";
+import "./Tips.css";
 import Highway from "../Assets/HighwayDrive.jpeg";
 import Navbar from "./shared_components/Navbar";
 import BannerBackground from "../Assets/home-banner-background.png"
 import AboutBackground from "../Assets/about-background.png";
 
-
-
-import axios from "axios";
-const Tips = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
-  const navigate = useNavigate();
-
-  const handleLogin = async () => {
-    if (!email || !password) {
-      setErrorMessage("Fields cannot be blank");
-      return;
-    }
-
-    try {
-      const response = await axios.post("/api/login", {
-        email,
-        password
-      });
-      localStorage.setItem("token", response.data.token);
-      axios.defaults.headers.common["Authorization"] = "Bearer " + localStorage.getItem("token");
-      console.log("Login Successful", response.data);
-      navigate("/quote-request");
-    } catch (error) {
-      setErrorMessage("Wrong username or password");
-    }
-  }
-
-  return (
+return (
     <div>
       <div className='home-bannerImage-container'>
           <img src={BannerBackground} alt="" />
@@ -175,6 +147,5 @@ const Tips = () => {
 
     </div>
  );
-}
 
 export default Tips;
