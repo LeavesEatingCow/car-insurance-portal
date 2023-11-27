@@ -3,7 +3,7 @@ package com.team10.carinsuranceportalservice.service.impl;
 import com.team10.carinsuranceportalservice.dto.JwtAuthenticationResponse;
 import com.team10.carinsuranceportalservice.dto.LoginDto;
 import com.team10.carinsuranceportalservice.dto.SignUpDto;
-import com.team10.carinsuranceportalservice.entity.Role;
+import com.team10.carinsuranceportalservice.entity.enums.Role;
 import com.team10.carinsuranceportalservice.entity.User;
 import com.team10.carinsuranceportalservice.repository.UserRepository;
 import com.team10.carinsuranceportalservice.service.AuthenticationService;

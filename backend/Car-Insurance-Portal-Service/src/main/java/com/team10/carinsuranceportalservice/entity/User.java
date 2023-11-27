@@ -1,5 +1,6 @@
 package com.team10.carinsuranceportalservice.entity;
 
+import com.team10.carinsuranceportalservice.entity.enums.Role;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

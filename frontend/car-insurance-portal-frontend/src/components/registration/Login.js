@@ -1,8 +1,10 @@
 import React, {useState} from "react";
 import "./Login.css"; // Import the CSS file
 import {useNavigate} from "react-router-dom";
-import carLogo from "./images/white_car_image.png";
-import rapidinsureLogo from "./images/rapidinsurelogo1.png";
+import carLogo from "../images/white_car_image.png";
+import rapidinsureLogo from "../images/rapidinsurelogo1.png";
+import BannerBackground from "../../Assets/home-banner-background.png"
+
 
 import axios from "axios";
 const Login = () => {
@@ -25,7 +27,7 @@ const Login = () => {
       localStorage.setItem("token", response.data.token);
       axios.defaults.headers.common["Authorization"] = "Bearer " + localStorage.getItem("token");
       console.log("Login Successful", response.data);
-      navigate("/quote-request");
+      navigate("/");
     } catch (error) {
       setErrorMessage("Wrong username or password");
     }
@@ -33,21 +35,10 @@ const Login = () => {
 
   return (
     <div className="main-container">
-      <div className="black-bar">
-        <div className="image-container">
-          <img
-            src={carLogo} // Import your carLogo image
-            alt="White Car Logo"
-            className="car-logo"
-          />
-          <img
-            src={rapidinsureLogo} // Import your rapidinsureLogo image
-            alt="Logo"
-            className="logo"
-          />
-        </div>
+      <h1>Log In</h1>
+      <div className='home-bannerImage-container'>
+        <img src={BannerBackground} alt="" />
       </div>
-
       <div className="off-white-form">
         <form className="login-form" onSubmit={(e) => e.preventDefault()}>
           <input
@@ -64,12 +55,16 @@ const Login = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          {errorMessage && <div className="error-message">{errorMessage}</div>}
+          {errorMessage && (
+            <div className="error-message">{errorMessage}</div>
+          )}
         </form>
-        <button onClick={handleLogin} className="login-btn2">Log In</button>
+        <button onClick={handleLogin} className="login-btn2">
+          Log In
+        </button>
       </div>
     </div>
   );
-}
+};
 
 export default Login;

@@ -2,10 +2,12 @@
 
 import React, {useState} from "react";
 import "./Signup.css"; // Import the CSS file
-import carLogo from "./images/white_car_image.png";
-import rapidinsureLogo from "./images/rapidinsurelogo1.png";
+import carLogo from "../images/white_car_image.png";
+import rapidinsureLogo from "../images/rapidinsurelogo1.png";
 import {useNavigate} from "react-router-dom";
 import axios from "axios";
+import BannerBackground from "../../Assets/home-banner-background.png"
+
 
 const Signup = () => {
   const [firstName, setFirstName] = useState("");
@@ -43,7 +45,7 @@ const Signup = () => {
       });
       localStorage.setItem("token", response.data.token);
       axios.defaults.headers.common["Authorization"] = "Bearer " + localStorage.getItem("token");
-      navigate("/quote-request");
+      navigate("/");
     } catch (error) {
       setErrorMessage("An error  occurred during signup.")
     }
@@ -51,13 +53,7 @@ const Signup = () => {
 
   return (
     <div className="main-container">
-      <div className="black-bar">
-        <div className="image-container">
-          <img src={carLogo} alt="White Car Logo" className="car-logo" />
-          <img src={rapidinsureLogo} alt="Logo" className="logo" />
-        </div>
-      </div>
-
+      <h1>Sign Up</h1>
       <div className="off-white-form">
         <input
           type="text"
