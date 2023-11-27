@@ -6,6 +6,10 @@ import "./thumbnails.css";
 import "./title.css";
 import Highway from "../Assets/HighwayDrive.jpeg";
 import Navbar from "./shared_components/Navbar";
+import BannerBackground from "../Assets/home-banner-background.png"
+import AboutBackground from "../Assets/about-background.png";
+
+
 
 import axios from "axios";
 const Tips = () => {
@@ -36,12 +40,19 @@ const Tips = () => {
 
   return (
     <div>
+      <div className='home-bannerImage-container'>
+          <img src={BannerBackground} alt="" />
+      </div>
       <Navbar/>
       <div class="title-section">
         <p class="rapidInsure-title_2">
           Tips For Better Auto Insurance
         </p>
         <img class="thumbnail1" src={Highway} alt=""/>
+      </div>
+
+      <div className="about-background-image-container">
+        <img src={AboutBackground} alt="" />
       </div>
 
       <p class="introToTips">
@@ -129,6 +140,7 @@ const Tips = () => {
           with better terms. A clean driving record enhances your insurability.
         </p>
       </div>
+
 
       <div class="faq">
         <p class="faq-title">

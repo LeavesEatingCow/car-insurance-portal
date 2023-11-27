@@ -3,6 +3,8 @@ import axios from 'axios';
 import {useLocation, useNavigate, useParams} from 'react-router-dom';
 import "./ConfirmationPage.css";
 import Navbar from "../shared_components/Navbar";
+import BannerBackground from "../../Assets/home-banner-background.png"
+import AboutBackground from "../../Assets/about-background.png";
 
 const ConfirmationPage = () => {
   const [emailPreview, setEmailPreview] = useState('');
@@ -33,6 +35,12 @@ const ConfirmationPage = () => {
 
   return (
     <>
+      <div className='home-bannerImage-container'>
+          <img src={BannerBackground} alt="" />
+      </div>
+      <div className="about-background-image-container">
+        <img src={AboutBackground} alt="" />
+      </div>
       <Navbar />
       <div className="confirmation-page">
         <h1>Thank you!</h1>

@@ -4,6 +4,8 @@ import axios from "axios";
 import "./QuoteRequestForm.css";
 import Navbar from "../shared_components/Navbar";
 import {jwtDecode} from "jwt-decode";
+import BannerBackground from "../../Assets/home-banner-background.png"
+import AboutBackground from "../../Assets/about-background.png";
 
 const QuoteRequestForm = () => {
   const [formData, setFormData] = useState({
@@ -174,6 +176,12 @@ const QuoteRequestForm = () => {
 
   return (
     <>
+      <div className='home-bannerImage-container'>
+          <img src={BannerBackground} alt="" />
+      </div>
+      <div className="about-background-image-container">
+        <img src={AboutBackground} alt="" />
+      </div>
       <Navbar />
       <form onSubmit={handleSubmit} className="form">
         <h2>Generate Quote Request</h2>
