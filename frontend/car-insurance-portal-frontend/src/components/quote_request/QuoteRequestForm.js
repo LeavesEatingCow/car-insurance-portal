@@ -176,6 +176,7 @@ const QuoteRequestForm = () => {
     <>
       <Navbar />
       <form onSubmit={handleSubmit} className="form">
+        <h2>Generate Quote Request</h2>
         <input
           type={dateType}
           name="dateOfBirth"
@@ -251,22 +252,28 @@ const QuoteRequestForm = () => {
         </select>
         {formErrors.addDriverToPolicy && <p className="error-message">{formErrors.addDriverToPolicy}</p>}
 
+        <div className="section-header">
+          <h3>Select Your Coverage Types</h3>
+        </div>
         <div className="checkbox-container">
           {["LIABILITY", "COLLISION", "COMPREHENSIVE", "UNINSURED_MOTORIST", "MEDICAL_PAYMENTS", "PERSONAL_INJURY"].map((type) => (
-            <label key={type} className="label">
+            <div key={type} className="checkbox-item"> {/* Each item in its own div */}
               <input type="checkbox" name="coverageTypes" value={type} onChange={handleCheckboxChange} />
-              {type}
-            </label>
+              <label className="label">{type}</label>
+            </div>
           ))}
         </div>
         {formErrors.coverageTypes && <p className="error-message">{formErrors.coverageTypes}</p>}
 
+        <div className="section-header">
+          <h3>Select Insurance Agencies</h3>
+        </div>
         <div className="checkbox-container">
           {insuranceAgencies.map(agency => (
-            <label key={agency.id} className="label">
+            <div key={agency.id} className="checkbox-item"> {/* Each item in its own div */}
               <input type="checkbox" name="selectedAgencies" value={agency.id} onChange={handleCheckboxChange} />
-              {agency.name}
-            </label>
+              <label className="label">{agency.name}</label>
+            </div>
           ))}
         </div>
         {formErrors.selectedAgencies && <p className="error-message">{formErrors.selectedAgencies}</p>}
