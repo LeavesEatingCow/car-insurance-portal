@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link, useNavigate} from "react-router-dom";
 import Navbar from './shared_components/Navbar'
 import BannerBackground from "../Assets/home-banner-background.png"
 import BannerImage from "../Assets/car-logo.png"
@@ -8,6 +9,12 @@ import Work from './Work'
 import Footer from './Footer'
 
 const Welcome = () => {
+  const navigate = useNavigate();
+  
+  const navigateToQuoteRequest = () => {
+    navigate("/quote-request");
+}
+
   return (
     <div className='home-container'>
       <Navbar/>
@@ -22,7 +29,7 @@ const Welcome = () => {
           <p className='primary-text'>
             Effortlessly Connect with Leading Car Insurance Agencies
           </p>
-          <button className='secondary-button'>
+          <button className='secondary-button' onClick={navigateToQuoteRequest}>
             Start Now <FiArrowRight />
           </button>
         </div>
