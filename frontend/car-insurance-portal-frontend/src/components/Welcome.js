@@ -17,13 +17,13 @@ const Welcome = () => {
         </div>
         <div className='home-text-section'>
           <h1 className="primary heading">
-            Header text
+            Welcome to RapidInsure!
           </h1>
           <p className='primary-text'>
-            Paragraph text
+            Effortlessly Connect with Leading Car Insurance Agencies
           </p>
           <button className='secondary-button'>
-            Order Now <FiArrowRight />
+            Start Now <FiArrowRight />
           </button>
         </div>
 
