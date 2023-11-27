@@ -21,7 +21,7 @@ body {
 }
 
 
-nav {
+/* nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -57,7 +57,7 @@ nav {
 .navbar-menu-container svg {
   font-size: 1.5rem;
   cursor: pointer;
-}
+} */
 
 
 .home-banner-container {
@@ -119,7 +119,7 @@ nav {
 }
 
 
-.about-section-container {
+/* .about-section-container {
   margin-top: 20rem;
   position: relative;
   display: flex;
@@ -149,7 +149,7 @@ nav {
 .about-buttons-container {
   margin-top: 2rem;
   display: flex;
-}
+} */
 
 
 .watch-video-button {
@@ -199,7 +199,7 @@ nav {
   font-size: 1.3rem;
   padding: 0.5rem 1rem;
 }
-.footer-wrapper {
+/* .footer-wrapper {
   margin: 6rem 0rem;
   display: flex;
   margin-top: 10rem;
@@ -215,9 +215,9 @@ nav {
   margin-right: 1.25rem;
   color: #585858;
 }
-/* .footer-section-one {
+.footer-section-one {
   border: 2px solid blue;
-} */
+}
 .footer-section-two {
   flex: 1;
   display: flex;
@@ -233,7 +233,7 @@ nav {
   font-weight: 600;
   color: #4c4c4c;
   cursor: pointer;
-}
+} */
 
 
 .testimonial-section-bottom {
@@ -268,7 +268,7 @@ nav {
 }
 
 
-.work-section-wrapper {
+/* .work-section-wrapper {
   margin-top: 15rem;
 }
 .work-section-top p {
@@ -313,7 +313,7 @@ nav {
   display: flex;
   align-items: center;
   font-weight: 600;
-}
+} */
 
 
 @media (max-width: 1000px) {
