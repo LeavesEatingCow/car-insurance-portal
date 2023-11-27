@@ -1,4 +1,4 @@
-import './App2.css';
+import './App.css';
 import Welcome from "./components/Welcome";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
