@@ -75,7 +75,7 @@ const Navbar = () => {
 
       <div className="navbar-links-container">
         <a href="">Insurance Companies</a>
-        <a href="">About</a>
+        <a href="/tip">Tips</a>
         {!isLoggedIn && (
           <>
             <Link to="/signup">Sign Up</Link>
