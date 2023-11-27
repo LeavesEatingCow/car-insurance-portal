@@ -40,28 +40,6 @@ const Navbar = () => {
 
   const isLoggedIn = isTokenValid();
 
-  const menuOptions = [
-    {
-      text: "Home",
-      icon: <HomeIcon />,
-    },
-    {
-      text: "About",
-      icon: <InfoIcon />,
-    },
-    {
-      text: "Testimonials",
-      icon: <CommentRoundedIcon />,
-    },
-    {
-      text: "Contact",
-      icon: <PhoneRoundedIcon />,
-    },
-    {
-      text: "Cart",
-      icon: <ShoppingCartRoundedIcon />,
-    },
-  ];
 
   const navigateToQuoteRequest = () => {
       navigate("/quote-request");
@@ -86,29 +64,6 @@ const Navbar = () => {
           Generate a Quote Now
         </button>
       </div>
-      <div className="navbar-menu-container">
-        <HiOutlineBars3 onClick={() => setOpenMenu(true)} />
-      </div>
-      <Drawer open={openMenu} onClose={() => setOpenMenu(false)} anchor="right">
-        <Box
-          sx={{ width: 250 }}
-          role="presentation"
-          onClick={() => setOpenMenu(false)}
-          onKeyDown={() => setOpenMenu(false)}
-        >
-          <List>
-            {menuOptions.map((item) => (
-              <ListItem key={item.text} disablePadding>
-                <ListItemButton>
-                  <ListItemIcon>{item.icon}</ListItemIcon>
-                  <ListItemText primary={item.text} />
-                </ListItemButton>
-              </ListItem>
-            ))}
-          </List>
-          <Divider />
-        </Box>
-      </Drawer>
     </nav>
   );
 };

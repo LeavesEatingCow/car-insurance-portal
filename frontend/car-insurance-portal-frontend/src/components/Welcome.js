@@ -3,6 +3,9 @@ import Navbar from './shared_components/Navbar'
 import BannerBackground from "../Assets/home-banner-background.png"
 import BannerImage from "../Assets/car-logo.png"
 import { FiArrowRight } from "react-icons/fi"
+import About from './About'
+import Work from './Work'
+import Footer from './Footer'
 
 const Welcome = () => {
   return (
@@ -28,6 +31,9 @@ const Welcome = () => {
           <img src={BannerImage} alt=""/>
         </div>
       </div>
+      <About />
+      <Work />
+      <Footer />
     </div>
   )
 }
