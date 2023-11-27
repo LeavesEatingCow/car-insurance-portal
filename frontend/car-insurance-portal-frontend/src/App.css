@@ -17,11 +17,9 @@ img {
 body {
   max-width: 100%;
   overflow-x: hidden;
-}
-
-body {
   background-color: #f6f6f6;
 }
+
 
 nav {
   display: flex;
@@ -60,6 +58,8 @@ nav {
   font-size: 1.5rem;
   cursor: pointer;
 }
+
+
 .home-banner-container {
   position: relative;
   display: flex;
@@ -117,6 +117,8 @@ nav {
 .secondary-button:hover {
   background-color: #e48f0f;
 }
+
+
 .about-section-container {
   margin-top: 20rem;
   position: relative;
@@ -148,6 +150,8 @@ nav {
   margin-top: 2rem;
   display: flex;
 }
+
+
 .watch-video-button {
   margin-left: 2rem;
   background-color: transparent;
@@ -230,6 +234,8 @@ nav {
   color: #4c4c4c;
   cursor: pointer;
 }
+
+
 .testimonial-section-bottom {
   margin-top: 2rem;
   background-color: white;
@@ -260,6 +266,8 @@ nav {
 .testimonial-section-bottom h2 {
   margin-top: 1.5rem;
 }
+
+
 .work-section-wrapper {
   margin-top: 15rem;
 }
@@ -307,6 +315,7 @@ nav {
   font-weight: 600;
 }
 
+
 @media (max-width: 1000px) {
   .navbar-links-container a {
     margin-right: 1rem;
@@ -319,6 +328,8 @@ nav {
     max-width: 600px;
   }
 }
+
+
 @media (max-width: 800px) {
   .nav-logo-container {
     max-width: 140px;
@@ -393,6 +404,8 @@ nav {
   .work-section-bottom {
     margin-top: 1rem !important;
   }
+
+
   .contact-form-container {
     padding: 0.5rem !important;
     flex-direction: column;
@@ -421,6 +434,8 @@ nav {
     max-width: 95vw;
   }
 }
+
+
 @media (max-width: 600px) {
   .home-bannerImage-container,
   .about-background-image-container {

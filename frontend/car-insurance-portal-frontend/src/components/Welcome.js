@@ -6,7 +6,7 @@ import BannerImage from "../Assets/car-logo.png"
 import { FiArrowRight } from "react-icons/fi"
 import About from './About'
 import Work from './Work'
-import Footer from './Footer'
+import Footer from './shared_components/Footer'
 
 const Welcome = () => {
   const navigate = useNavigate();
@@ -29,7 +29,7 @@ const Welcome = () => {
             Effortlessly Connect with Leading Car Insurance Agencies
           </p>
           <button className='secondary-button' onClick={navigateToQuoteRequest}>
-            Start Now <FiArrowRight />
+            Get Started <FiArrowRight />
           </button>
         </div>
 
