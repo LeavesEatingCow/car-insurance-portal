@@ -1,0 +1,33 @@
+.confirmation-page {
+    text-align: center;
+    padding: 20px;
+}
+
+.confirmation-page h1 {
+    margin-bottom: 15px;
+}
+
+.confirmation-page .email-preview {
+    margin: 20px auto;
+    border: 1px solid #ddd;
+    padding: 20px;
+    max-width: 80%;
+    min-height: 200px;
+    overflow-wrap: break-word;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.confirmation-page .home-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.confirmation-page .home-button:hover {
+    background-color: #45a049;
+}

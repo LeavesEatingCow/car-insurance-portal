@@ -1,11 +1,11 @@
 import React, {useState} from "react";
 import "./Login.css"; // Import the CSS file
 import {useNavigate} from "react-router-dom";
-import carLogo from "./images/white_car_image.png";
-import rapidinsureLogo from "./images/rapidinsurelogo1.png";
+import carLogo from "../images/white_car_image.png";
+import rapidinsureLogo from "../images/rapidinsurelogo1.png";
 
 import axios from "axios";
-function Login() {
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -25,7 +25,7 @@ function Login() {
       localStorage.setItem("token", response.data.token);
       axios.defaults.headers.common["Authorization"] = "Bearer " + localStorage.getItem("token");
       console.log("Login Successful", response.data);
-      navigate("/homepage")
+      navigate("/quote-request");
     } catch (error) {
       setErrorMessage("Wrong username or password");
     }
