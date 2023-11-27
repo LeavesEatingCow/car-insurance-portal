@@ -26,67 +26,67 @@ const WelcomePage = () => {
       <Navbar/>
       <header>
         <img src={HeaderImg} alt="Welcome to RapidInsure" />
-        <div class="centered"><h1>Welcome to RapidInsure!</h1></div>
-        <div><p>Effortlessly Connect with Leading Car Insurance Agencies</p></div>
+        <div class="centered"><h1>Welcome to RapidInsure!</h1>
+        <p>Effortlessly Connect with Leading Car Insurance Agencies</p></div>
       </header>
 
       <div>At RapidInsure, we streamline the process of finding the best car insurance for your needs. Our platform is designed to make insurance inquiries as straightforward and efficient as possible. Say goodbye to the hassle of reaching out to multiple insurers one by one!</div>
-      <section className="key-points">
+      <article className="key-points">
         {/* Key Points Section */}
         {/* Use icons or images next to each point */}
-        <div>
+        <div className="point">
           <CloseFullscreenIcon />
           <p>Simplify Your Insurance Experience</p>
         </div>
-        <div>
+        <div className="point">
           <HubIcon />
           <p>Effortlessly Connect with Leading Car Insurance Agencies</p>
         </div>
-      </section>
+      </article>
 
-      <section className="how-it-works">
+      <article className="how-it-works">
         {/* How It Works Section */}
         {/* Use relevant images for each step */}
         <h2>How It Works</h2>
-        <div>
+        <div className="step">
           <PersonIcon />
           <p>Create Your Profile: Sign up with just a few simple steps and start your journey towards hassle-free insurance browsing.</p>
         </div>
-        <div>
+        <div className="step">
           <DriveEtaIcon />
           <p>Generate a Quote Request: Tell us a bit about your car – its make, model, and year – along with your location and any other relevant details. Our system will craft a personalized insurance query tailored to your needs.</p>
         </div>
-        <div>
+        <div className="step">
           <AdsClickIcon />
           <p>Choose Your Insurance Agencies: Browse through a list of top car insurance providers. Select the ones you want to engage with, from local favorites to national giants.</p>
         </div>
-        <div>
+        <div className="step">
           <MouseIcon />
           <p>Send in One Click: Send out your tailored insurance query to multiple agencies simultaneously with just a click. No more repetitive form submissions!</p>
         </div>
-      </section>
+      </article>
 
-      <section className="why-choose">
+      <article className="why-choose">
         {/* Why Choose RapidInsure Section */}
         {/* Use icons or images next to each point */}
         <h2>Why Choose RapidInsure?</h2>
         <div class="choose-container">
-        <div class="choose-wrapper">
-          <AccessTimeFilled />
-          <p>Time-Efficient: Save hours by reaching out to multiple agencies in one go.</p>
+          <div class="choose-wrapper">
+            <AccessTimeFilled />
+            <p>Time-Efficient: Save hours by reaching out to multiple agencies in one go.</p>
+          </div>
+          <div class="choose-wrapper">
+            <EmojiPeopleIcon />
+            <p>User-Friendly Interface: Navigate through our platform with ease.</p>
+          </div>
+          <div class="choose-wrapper">
+            <SecurityIcon />
+            <p>Secure and Reliable: Your data's security is our top priority.</p>
+          </div>
         </div>
-        <div class="choose-wrapper">
-          <EmojiPeopleIcon />
-          <p>User-Friendly Interface: Navigate through our platform with ease.</p>
-        </div>
-        <div class="choose-wrapper">
-          <SecurityIcon />
-          <p>Secure and Reliable: Your data's security is our top priority.</p>
-        </div>
-        </div>
-      </section>
+      </article>
 
-      <section className="cta">
+      <article className="cta">
         {/* Call to Action Section */}
         <div class="cta-container">
           <div class="cta-text">
@@ -96,7 +96,7 @@ const WelcomePage = () => {
           </div>
           <div><img src={SignUpImg} alt="Signing Up"/></div>
         </div>
-      </section>
+      </article>
     </div>
   );
 };
