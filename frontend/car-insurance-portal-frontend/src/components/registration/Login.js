@@ -1,8 +1,6 @@
 import React, {useState} from "react";
 import "./Login.css"; // Import the CSS file
 import {useNavigate} from "react-router-dom";
-import carLogo from "../images/white_car_image.png";
-import rapidinsureLogo from "../images/rapidinsurelogo1.png";
 import BannerBackground from "../../Assets/home-banner-background.png"
 
 
