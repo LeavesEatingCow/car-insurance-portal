@@ -56,12 +56,6 @@ const Navbar = () => {
       <div className="navbar-links-container">
             <a href="">Insurance Companies</a>
         </div>
-      
-      <div className="welc-debug">
-        <Link to="/1">w1</Link>
-        <Link to="/2">w2</Link>
-        <Link to="/3">w3</Link>
-      </div>
       <div className="navbar-links-container">
         
         <a href="">About</a>

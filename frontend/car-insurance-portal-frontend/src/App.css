@@ -60,6 +60,8 @@
     font-size: 1.5rem;
     cursor: pointer;
   }
+
+
   .home-banner-container {
     position: relative;
     display: flex;
@@ -117,6 +119,7 @@
   .secondary-button:hover {
     background-color: #e48f0f;
   }
+  
   .about-section-container {
     margin-top: 20rem;
     position: relative;
