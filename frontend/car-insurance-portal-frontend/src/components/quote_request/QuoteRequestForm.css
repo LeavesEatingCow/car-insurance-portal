@@ -1,12 +1,16 @@
 .form {
     display: flex;
     flex-direction: column;
-    max-width: 400px;
+    max-width: 600px;
     margin: 20px auto;
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 8px;
     background-color: #f9f9f9;
+}
+
+h2 {
+    padding-bottom: 15px;
 }
 
 .input, .checkbox-container input[type="checkbox"] {
@@ -33,9 +37,22 @@
     cursor: pointer;
 }
 
+.section-header h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
 .checkbox-container {
     display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.checkbox-item {
+    display: flex;
     align-items: center;
+    margin-top: 10px;
 }
 
 .checkbox-container label {
