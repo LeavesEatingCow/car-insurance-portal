@@ -41,7 +41,7 @@ const Navbar = () => {
 
 
   const navigateToQuoteRequest = () => {
-      navigate("/quote-request");
+    navigate("/quote-request");
   }
 
   return (
@@ -51,8 +51,8 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-links-container">
-        <a href="">Insurance Companies</a>
-        <a href="">About</a>
+        <a href="">Tips</a>
+        <a href="/">Home</a>
         {!isLoggedIn && (
           <>
             <Link to="/signup">Sign Up</Link>
