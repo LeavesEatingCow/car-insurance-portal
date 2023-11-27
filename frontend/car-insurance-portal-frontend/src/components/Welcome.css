@@ -1,23 +1,19 @@
 /* WelcomePage.css */
 
-/* .home-container {
+.welcome-container {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
 
   font-family: 'Roboto', sans-serif;
-} */
+}
 
 header{
   position: relative;
   text-align: center;
   color: white;
 }
-/* banner img */
-header img {
-  width: 100%;
-  height: auto;
-}
+
 .centered {
   position: absolute;
   top: 50%;
@@ -25,19 +21,23 @@ header img {
   transform: translate(-50%, -50%);
 }
 
-/* header h1 {
+header img {
+  width: 100%;
+  height: auto;
+}
+
+header h1 {
   font-size: 2em;
   margin-bottom: 10px;
-} */
+}
 
 .key-points {
-  display: block;
+  display: flex;
+  justify-content: space-around;
   margin: 20px 0;
 }
 
-.key-points .subPoints{
-  display: flex;
-  flex-direction: row;
+.key-points div {
   text-align: center;
 }
 
@@ -45,26 +45,6 @@ header img {
   width: 50px;
   height: 50px;
   margin-bottom: 10px;
-}
-
-.how-it-works {
-  margin: 20px 0;
-}
-.how-it-works .step{
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.why-choose{
-  margin: 20px 0;
-}
-
-.why-choose .choose-container{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-bottom: 20px;
 }
 
 .choose-wrapper {
@@ -82,6 +62,24 @@ header img {
   margin: 1rem 2rem;
 }
 
+.how-it-works,
+.why-choose {
+  margin: 20px 0;
+}
+
+.how-it-works div,
+.why-choose div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.how-it-works img,
+.why-choose img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
 
 .cta {
   text-align: center;
