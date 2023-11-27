@@ -6,7 +6,9 @@ import {Navigate, Route, Routes, useLocation} from "react-router-dom";
 import QuoteRequestForm from "./components/quote_request/QuoteRequestForm";
 import {jwtDecode} from 'jwt-decode';
 import ConfirmationPage from "./components/quote_request/ConfirmationPage";
-import Tips from "./components/Tips";
+import Layout from './components/shared_components/Layout'
+
+
 
 function PrivateRoute({ children, ...rest }) {
   const location = useLocation();
@@ -41,7 +43,6 @@ function App() {
         <Route path="/" element={ <Layout><Welcome/></Layout>} />
         <Route path="/login" element={ <Layout><Login/></Layout>} />
         <Route path="/signup" element={ <Layout><Signup/></Layout>} />
-        <Route path="/tips" element={ <Tips/>} />
         <Route
           path="/quote-request"
           element={

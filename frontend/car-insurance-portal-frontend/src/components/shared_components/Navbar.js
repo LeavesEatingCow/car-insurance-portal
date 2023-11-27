@@ -17,7 +17,6 @@ import PhoneRoundedIcon from "@mui/icons-material/PhoneRounded";
 import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
 import {Link, useNavigate} from "react-router-dom";
 import {jwtDecode} from "jwt-decode";
-import Tips from "../../components/Tips"
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -52,7 +51,7 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-links-container">
-        <a href="/tips">Tips</a>
+        <a href="">Tips</a>
         <a href="/">Home</a>
         {!isLoggedIn && (
           <>
