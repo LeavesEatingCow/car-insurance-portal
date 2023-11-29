@@ -9,8 +9,6 @@ import ConfirmationPage from "./components/quote_request/ConfirmationPage";
 import Layout from './components/shared_components/Layout'
 import Tips from "./components/Tips";
 
-
-
 function PrivateRoute({ children, ...rest }) {
   const location = useLocation();
   const token = localStorage.getItem("token");
