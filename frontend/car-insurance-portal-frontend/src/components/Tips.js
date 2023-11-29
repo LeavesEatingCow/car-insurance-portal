@@ -9,8 +9,7 @@ import Navbar from "./shared_components/Navbar";
 import BannerBackground from "../Assets/home-banner-background.png"
 import AboutBackground from "../Assets/about-background.png";
 
-const Tips = () => {
-  return (
+const Tips = () =>{ return (
     <div>
       <div className='home-bannerImage-container'>
           <img src={BannerBackground} alt="" />

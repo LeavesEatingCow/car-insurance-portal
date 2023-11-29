@@ -1,4 +1,5 @@
-import React from "react"; //react
+import React from "react";
+import './About.css';
 import AboutBackground from "../Assets/about-background.png";
 import AboutBackgroundImage from "../Assets/about-background-image.png";
 

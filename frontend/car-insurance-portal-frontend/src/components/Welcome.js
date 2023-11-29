@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link, useNavigate} from "react-router-dom";
+import './Welcome.css';
 import Navbar from './shared_components/Navbar'
 import BannerBackground from "../Assets/home-banner-background.png"
 import BannerImage from "../Assets/car-logo.png"

@@ -1,4 +1,5 @@
 import React from "react";
+import './Work.css';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import RequestQuoteIcon from '@mui/icons-material/RequestQuote';
 import BusinessIcon from '@mui/icons-material/Business';

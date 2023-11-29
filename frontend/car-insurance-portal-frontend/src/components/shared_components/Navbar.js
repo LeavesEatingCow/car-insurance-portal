@@ -1,4 +1,5 @@
 import React from "react";
+import './Navbar.css';
 import Logo from "../../Assets/Logo.svg";
 import {Link, useNavigate} from "react-router-dom";
 import {jwtDecode} from "jwt-decode";
