@@ -3,8 +3,8 @@ import "./Login.css"; // Import the CSS file
 import {useNavigate} from "react-router-dom";
 import BannerBackground from "../../Assets/home-banner-background.png"
 
+import axiosInstance from "../../api/axiosInstance";
 
-import axios from "axios";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -18,12 +18,11 @@ const Login = () => {
     }
 
     try {
-      const response = await axios.post("/api/login", {
+      const response = await axiosInstance.post("/api/login", {
         email,
         password
       });
       localStorage.setItem("token", response.data.token);
-      axios.defaults.headers.common["Authorization"] = "Bearer " + localStorage.getItem("token");
       console.log("Login Successful", response.data);
       navigate("/");
     } catch (error) {

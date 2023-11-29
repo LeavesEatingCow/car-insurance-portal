@@ -1,11 +1,11 @@
 import {useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
-import axios from "axios";
 import "./QuoteRequestForm.css";
 import Navbar from "../shared_components/Navbar";
 import {jwtDecode} from "jwt-decode";
 import BannerBackground from "../../Assets/home-banner-background.png"
 import AboutBackground from "../../Assets/about-background.png";
+import axiosInstance from "../../api/axiosInstance";
 
 const QuoteRequestForm = () => {
   const [formData, setFormData] = useState({
@@ -35,10 +35,7 @@ const QuoteRequestForm = () => {
   useEffect(() => {
     const fetchAgencies = async () => {
       try {
-        const token = localStorage.getItem("token");
-        const response = await axios.get('/api/insurance-agencies', {
-          headers: { Authorization: `Bearer ${token}` }
-        });
+        const response = await axiosInstance.get('/api/insurance-agencies');
         setInsuranceAgencies(response.data);
       } catch (error) {
         console.error("Error fetching insurance agencies", error);
@@ -140,22 +137,12 @@ const QuoteRequestForm = () => {
     }
 
     try {
-      const token = localStorage.getItem("token");
-      const response = await axios.post("/api/quote-requests", formData, {
-        headers: { Authorization: `Bearer ${token}` }
-      });
+      const response = await axiosInstance.post("/api/quote-requests", formData);
 
       // Send to selected agencies
       const quoteRequestId = response.data.quoteRequestId;
 
-      if (!quoteRequestId) {
-        console.error("Failed to retrieve quote request ID");
-        return;
-      }
-
-      await axios.post(`/api/quote-requests/${quoteRequestId}/send`, formData.selectedAgencies, {
-        headers: { Authorization: `Bearer ${token}` }
-      });
+      await axiosInstance.post(`/api/quote-requests/${quoteRequestId}/send`, formData.selectedAgencies);
 
       console.log("Quote request submitted and sent to agencies");
       navigate(`/confirmation/${quoteRequestId}`, { state: { submitted: true } });

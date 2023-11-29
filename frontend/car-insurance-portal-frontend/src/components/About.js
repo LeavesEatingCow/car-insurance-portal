@@ -22,9 +22,6 @@ const About = () => {
         <p className="primary-text">
           Our platform is designed to make insurance inquiries as straightforward and efficient as possible. Say goodbye to the hassle of reaching out to multiple insurers one by one!
         </p>
-        <div className="about-buttons-container">
-          <button className="secondary-button">Learn More</button>
-        </div>
       </div>
     </div>
   );

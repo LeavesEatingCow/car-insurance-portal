@@ -1,12 +1,7 @@
-// Signup.js
-
 import React, {useState} from "react";
 import "./Signup.css"; // Import the CSS file
-import carLogo from "../images/white_car_image.png";
-import rapidinsureLogo from "../images/rapidinsurelogo1.png";
 import {useNavigate} from "react-router-dom";
-import axios from "axios";
-import BannerBackground from "../../Assets/home-banner-background.png"
+import axiosInstance from "../../api/axiosInstance";
 
 
 const Signup = () => {
@@ -36,7 +31,7 @@ const Signup = () => {
     }
 
     try {
-      const response = await axios.post("/api/signup", {
+      const response = await axiosInstance.post("/api/signup", {
         firstName,
         lastName,
         email,
@@ -44,7 +39,6 @@ const Signup = () => {
         password
       });
       localStorage.setItem("token", response.data.token);
-      axios.defaults.headers.common["Authorization"] = "Bearer " + localStorage.getItem("token");
       navigate("/");
     } catch (error) {
       setErrorMessage("An error  occurred during signup.")
