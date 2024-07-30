@@ -70,3 +70,4 @@ To get started with RapidInsure:
    ```bash
    CREATE DATABASE rapidinsure;
 6. Open backend folder in a Java IDE and run
+![RapidInsure](https://github.com/LeavesEatingCow/car-insurance-portal/blob/main/frontend/car-insurance-portal-frontend/src/Assets/rapidinsure.gif)
